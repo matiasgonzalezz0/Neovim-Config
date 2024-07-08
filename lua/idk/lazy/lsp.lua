@@ -30,11 +30,14 @@ return {
 			"stylua",
 			"clangd",
 			"cpplint",
-			"jedi_language_server",
-			"pylint",
 			"typescript-language-server",
 			"html-lsp",
-			"css-lsp"
+			"css-lsp",
+			"black",
+			"isort",
+			"prettier",
+			"eslint_d",
+			"pylint",
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
@@ -48,5 +51,5 @@ return {
 				end,
 			},
 		})
-	end
+	end,
 }
