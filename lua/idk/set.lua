@@ -1,3 +1,6 @@
+-- Some themes need these option
+vim.opt.termguicolors = true
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -24,3 +27,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 vim.opt.hlsearch = true
+
+-- Disables netrw
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1

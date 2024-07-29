@@ -33,11 +33,12 @@ return {
 			"typescript-language-server",
 			"html-lsp",
 			"css-lsp",
-			"black",
-			"isort",
 			"prettier",
 			"eslint_d",
+			-- Python
+			"jedi-language-server",
 			"pylint",
+			"black",
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
