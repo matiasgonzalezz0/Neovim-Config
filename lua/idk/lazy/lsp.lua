@@ -36,7 +36,7 @@ return {
 			"prettier",
 			"eslint_d",
 			-- Python
-			"jedi-language-server",
+			"pyright",
 			"pylint",
 			"black",
 		})
