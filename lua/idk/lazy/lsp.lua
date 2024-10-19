@@ -37,7 +37,7 @@ return {
 			"eslint_d",
 			-- Python
 			"pyright",
-			"pylint",
+			"flake8",
 			"black",
 		})
 
