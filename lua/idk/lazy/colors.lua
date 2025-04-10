@@ -11,31 +11,31 @@ return {
 	-- 		vim.cmd.colorscheme("tokyonight")
 	-- 	end,
 	-- },
-	-- {
-	-- 	"catppuccin/nvim",
-	-- 	name = "catppuccin",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("catppuccin").setup({
-	-- 			flavour = "mocha",
-	-- 		})
-	--
-	-- 		vim.cmd.colorscheme("catppuccin")
-	-- 	end,
-	-- },
 	{
-		"rose-pine/neovim",
-		name = "rose-pine",
+		"catppuccin/nvim",
+		name = "frappe",
+		lazy = false,
+		priority = 1000,
 		config = function()
-			require("rose-pine").setup({
-				variant = "main",
-				styles = {
-					italic = false,
-				},
+			require("catppuccin").setup({
+				flavour = "frappe",
 			})
 
-			vim.cmd.colorscheme("rose-pine")
+			vim.cmd.colorscheme("catppuccin")
 		end,
 	},
+	-- {
+	-- 	"rose-pine/neovim",
+	-- 	name = "rose-pine",
+	-- 	config = function()
+	-- 		require("rose-pine").setup({
+	-- 			variant = "main",
+	-- 			styles = {
+	-- 				italic = false,
+	-- 			},
+	-- 		})
+	--
+	-- 		vim.cmd.colorscheme("rose-pine")
+	-- 	end,
+	-- },
 }

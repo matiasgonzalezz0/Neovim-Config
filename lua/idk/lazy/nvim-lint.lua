@@ -11,6 +11,7 @@ return {
 			javascriptreact = { "eslint_d" },
 			typescriptreact = { "eslint_d" },
 			python = { "flake8" },
+			go = { "golangcilint" },
 		}
 
 		eslint.args = {

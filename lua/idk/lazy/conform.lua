@@ -16,6 +16,7 @@ return {
 				yaml = { "prettier" },
 				lua = { "stylua" },
 				python = { "black" },
+				go = { "gofumpt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

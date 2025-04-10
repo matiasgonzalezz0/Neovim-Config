@@ -39,6 +39,10 @@ return {
 			"pyright",
 			"flake8",
 			"black",
+			-- GO
+			"gopls",
+			"golangci-lint",
+			"gofumpt",
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
