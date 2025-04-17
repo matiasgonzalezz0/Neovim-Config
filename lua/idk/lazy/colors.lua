@@ -1,29 +1,17 @@
 return {
 	-- {
-	-- 	"folke/tokyonight.nvim",
+	-- 	"catppuccin/nvim",
+	-- 	name = "frappe",
 	-- 	lazy = false,
 	-- 	priority = 1000,
 	-- 	config = function()
-	-- 		require("tokyonight").setup({
-	-- 			style = "night",
+	-- 		require("catppuccin").setup({
+	-- 			flavour = "frappe",
 	-- 		})
 	--
-	-- 		vim.cmd.colorscheme("tokyonight")
+	-- 		vim.cmd.colorscheme("catppuccin")
 	-- 	end,
 	-- },
-	{
-		"catppuccin/nvim",
-		name = "frappe",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("catppuccin").setup({
-				flavour = "frappe",
-			})
-
-			vim.cmd.colorscheme("catppuccin")
-		end,
-	},
 	-- {
 	-- 	"rose-pine/neovim",
 	-- 	name = "rose-pine",
@@ -38,4 +26,12 @@ return {
 	-- 		vim.cmd.colorscheme("rose-pine")
 	-- 	end,
 	-- },
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("kanagawa")
+		end,
+	},
 }
