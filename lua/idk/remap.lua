@@ -24,3 +24,6 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- Replace selected word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gcI<Left><Left><Left><Left>]])
+
+-- Search for the selected word
+vim.keymap.set("n", "<leader>/", ":/<C-r><C-w><CR>")
