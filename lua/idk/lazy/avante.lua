@@ -44,4 +44,9 @@ return {
 			ft = { "markdown", "Avante" },
 		},
 	},
+	config = function()
+		require("avante").setup({})
+
+		vim.keymap.set("n", "<leader>an", "<CMD>AvanteChatNew<CR>", { desc = "Open new Avante chat" })
+	end,
 }
