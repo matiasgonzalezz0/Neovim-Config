@@ -4,7 +4,7 @@ return {
 	dependencies = {
 		{
 			"L3MON4D3/LuaSnip",
-			build = "make install_jsregexp"
+			build = "make install_jsregexp",
 		},
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lua",
@@ -27,13 +27,13 @@ return {
 				["<C-n>"] = cmp.mapping.select_next_item(),
 				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-y>"] = cmp.mapping.confirm({ select = true }),
-				["<C-Space>"] = cmp.mapping.complete(),
 			}),
-			sources = {
+			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
-				{ name = "path" },
-			},
+			}, {
+				{ name = "buffer" },
+			}),
 		})
-	end
+	end,
 }

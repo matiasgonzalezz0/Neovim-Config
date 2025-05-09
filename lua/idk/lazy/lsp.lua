@@ -5,7 +5,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		{ "j-hui/fidget.nvim", opts = {} },
-		{ "folke/neodev.nvim", opts = {} },
+		{ "folke/lazydev.nvim", opts = {} },
 	},
 	config = function()
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -33,8 +33,8 @@ return {
 			"typescript-language-server",
 			"html-lsp",
 			"css-lsp",
-			"prettier",
-			"eslint_d",
+			"prettierd",
+			{ "eslint_d", version = "13.1.2" },
 			-- Python
 			"pyright",
 			"flake8",
@@ -48,6 +48,8 @@ return {
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 		require("mason-lspconfig").setup({
+			automatic_enable = true,
+			ensure_installed = {},
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}
