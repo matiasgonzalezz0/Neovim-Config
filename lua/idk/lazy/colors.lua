@@ -26,12 +26,21 @@ return {
 	-- 		vim.cmd.colorscheme("rose-pine")
 	-- 	end,
 	-- },
+	-- {
+	-- 	"rebelot/kanagawa.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("kanagawa")
+	-- 	end,
+	-- },
 	{
-		"rebelot/kanagawa.nvim",
+		"ribru17/bamboo.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("kanagawa")
+			require("bamboo").setup({})
+			require("bamboo").load()
 		end,
 	},
 }
