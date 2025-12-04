@@ -1,7 +1,7 @@
 return {
 	-- {
 	-- 	"catppuccin/nvim",
-	-- 	name = "frappe",
+	-- 	name = "macchiato",
 	-- 	lazy = false,
 	-- 	priority = 1000,
 	-- 	config = function()
@@ -26,14 +26,14 @@ return {
 	-- 		vim.cmd.colorscheme("rose-pine")
 	-- 	end,
 	-- },
-	-- {
-	-- 	"rebelot/kanagawa.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd.colorscheme("kanagawa")
-	-- 	end,
-	-- },
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("kanagawa")
+		end,
+	},
 	-- {
 	-- 	"ribru17/bamboo.nvim",
 	-- 	lazy = false,
@@ -43,12 +43,12 @@ return {
 	-- 		require("bamboo").load()
 	-- 	end,
 	-- },
-	{
-		"Yazeed1s/oh-lucy.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd.colorscheme("oh-lucy")
-		end,
-	},
+	-- {
+	-- 	"Yazeed1s/oh-lucy.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("oh-lucy")
+	-- 	end,
+	-- },
 }
