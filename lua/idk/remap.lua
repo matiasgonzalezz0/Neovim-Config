@@ -27,3 +27,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gcI<Left><Left>
 
 -- Search for the selected word
 vim.keymap.set("n", "<leader>/", ":/<C-r><C-w><CR>")
+
+-- Reload current file
+vim.keymap.set("n", "<leader>e", ":e<CR>")
