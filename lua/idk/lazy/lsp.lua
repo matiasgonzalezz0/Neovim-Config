@@ -34,7 +34,7 @@ return {
 			"html-lsp",
 			"css-lsp",
 			"prettierd",
-			{ "eslint_d", version = "13.1.2" },
+			"eslint_d",
 			-- Python
 			"pyright",
 			"flake8",

@@ -17,7 +17,7 @@ return {
 		name = "rose-pine",
 		config = function()
 			require("rose-pine").setup({
-				variant = "dawn",
+				variant = "moon",
 				styles = {
 					italic = false,
 				},
