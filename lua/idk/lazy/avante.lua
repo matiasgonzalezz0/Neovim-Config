@@ -1,27 +1,45 @@
 return {
-	"yetone/avante.nvim",
+	"avante-corp/avante.nvim",
 	event = "VeryLazy",
 	version = false,
-	opts = {
-		provider = "openai",
-		openai = {
-			endpoint = "https://api.openai.com/v1",
-			model = "gpt-4o",
-			timeout = 30000,
-			temperature = 0,
-			max_completion_tokens = 8192,
-		},
-	},
 	build = "make",
+	opts = {
+		-- Claude Code via ACP (uses your Claude subscription).
+		-- REQUIRED to use Claude Code: install the ACP adapter once (needs the `claude` CLI too):
+		--   npm i -g @agentclientprotocol/claude-agent-acp
+		-- Switch at runtime with :AvanteSwitchProvider (openai / openrouter read
+		-- OPENAI_API_KEY / OPENROUTER_API_KEY from the environment).
+		provider = "claude-code",
+		acp_providers = {
+			["claude-code"] = {
+				env = {
+					-- Default is "bypassPermissions"; ask before edits/commands instead
+					ACP_PERMISSION_MODE = "default",
+				},
+			},
+		},
+		selector = { provider = "telescope" },
+	},
+	config = function(_, opts)
+		require("avante").setup(opts)
+
+		-- Avante's model picker crashes on ACP providers (claude-code), which have their own picker
+		vim.keymap.set("n", "<leader>a?", function()
+			local Config = require("avante.config")
+			if Config.acp_providers[Config.provider] then
+				require("avante.api").select_acp_model()
+			else
+				require("avante.api").select_model()
+			end
+		end, { desc = "avante: select model" })
+	end,
 	dependencies = {
-		"nvim-treesitter/nvim-treesitter",
-		"stevearc/dressing.nvim",
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
+		{ "ColinKennedy/mega.cmdparse", dependencies = { "ColinKennedy/mega.logging" } },
 		"nvim-telescope/telescope.nvim",
 		"hrsh7th/nvim-cmp",
 		"nvim-tree/nvim-web-devicons",
-		"zbirenbaum/copilot.lua",
 		{
 			"HakonHarnes/img-clip.nvim",
 			event = "VeryLazy",
@@ -44,9 +62,4 @@ return {
 			ft = { "markdown", "Avante" },
 		},
 	},
-	config = function()
-		require("avante").setup({})
-
-		vim.keymap.set("n", "<leader>an", "<CMD>AvanteChatNew<CR>", { desc = "Open new Avante chat" })
-	end,
 }
