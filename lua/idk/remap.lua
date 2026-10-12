@@ -22,6 +22,10 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Delete without yanking
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
+-- Move selected lines up/down
+vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move selection down" })
+vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move selection up" })
+
 -- Replace selected word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gcI<Left><Left><Left><Left>]])
 

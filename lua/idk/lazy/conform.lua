@@ -17,6 +17,14 @@ return {
 				lua = { "stylua" },
 				python = { "black" },
 				go = { "gofumpt" },
+				sql = { "sqruff" },
+			},
+			formatters = {
+				sqruff = {
+					prepend_args = { "--dialect", "sqlite" },
+					-- 1 only means it left lint warnings it can't auto-fix
+					exit_codes = { 0, 1 },
+				},
 			},
 			format_on_save = function(bufnr)
 				-- off unless enabled with :FormatEnable / :FormatToggle
